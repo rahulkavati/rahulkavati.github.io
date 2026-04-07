@@ -12,15 +12,19 @@ function setTheme(theme) {
   root.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
 
-  const icon = theme === "light" ? "☀️" : "🌙";
-  themeBtn.querySelector(".btn__icon").textContent = icon;
+  const iconEl = themeBtn.querySelector("i[data-lucide]");
+  if (iconEl) {
+    iconEl.setAttribute("data-lucide", theme === "light" ? "sun" : "moon");
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+  }
 }
 
 const saved = getSavedTheme();
 if (saved) {
   setTheme(saved);
 } else {
-  // Default: dark
   setTheme("dark");
 }
 
