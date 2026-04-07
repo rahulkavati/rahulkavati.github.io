@@ -9,12 +9,25 @@
   <meta property="og:description" content="Flutter • Spring Boot • Cloud/DevOps • Federated Learning Research" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ctext y='0.9em' font-size='96'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Devicon for tech logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
+  <!-- Animated background -->
+  <div class="mesh-gradient"></div>
+  <div class="grid-pattern"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="topbar">
@@ -38,7 +51,7 @@
           <i data-lucide="moon" class="icon"></i>
           <span class="btn__label">Theme</span>
         </button>
-        <a class="btn" href="assets/rahul-kavati-resume.pdf" target="_blank" rel="noopener">
+        <a class="btn resume-link" href="assets/rahulkavati_resume.pdf" target="_blank" rel="noopener">
           <i data-lucide="file-text" class="icon"></i>
           <span class="btn__label">Resume</span>
         </a>
@@ -52,7 +65,7 @@
         <div>
           <p class="kicker"><i data-lucide="code-2" class="icon"></i> Software Engineer • Flutter • Spring Boot</p>
           <h1>
-            I build scalable mobile + backend systems,
+            I build <span class="gradient-text">scalable mobile + backend systems</span>,
             and I care deeply about clean architecture and fast delivery.
           </h1>
           <p class="lede">
@@ -61,7 +74,7 @@
           </p>
 
           <div class="hero__cta">
-            <a class="btn" href="#projects">
+            <a class="btn btn--primary" href="#projects">
               <i data-lucide="rocket" class="icon"></i>
               <span class="btn__label">View Projects</span>
             </a>
@@ -92,8 +105,8 @@
           <div class="divider"></div>
           <div class="stack">
             <a class="link" href="mailto:rahulkavati.us@gmail.com"><i data-lucide="mail" class="icon-sm"></i> rahulkavati.us@gmail.com</a>
-            <a class="link" href="https://github.com/rahulkavati" target="_blank" rel="noopener"><i data-lucide="github" class="icon-sm"></i> github.com/rahulkavati</a>
-            <a class="link" href="https://linkedin.com/in/rahulkavati" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i> linkedin.com/in/rahulkavati</a>
+            <a class="link" href="https://github.com/rahulkavati" target="_blank" rel="noopener"><i class="devicon-github-original icon-sm"></i> github.com/rahulkavati</a>
+            <a class="link" href="https://linkedin.com/in/rahulkavati" target="_blank" rel="noopener"><i class="devicon-linkedin-plain icon-sm"></i> linkedin.com/in/rahulkavati</a>
           </div>
         </aside>
       </div>
@@ -237,7 +250,14 @@
               Proc. IEEE Annual Computing and Communication Workshop and Conference (CCWC), 2026.
             </p>
             <div class="project__links">
-              <a class="btn btn--ghost" href="https://doi.org/10.1109/CCWC67433.2026.11393779" target="_blank" rel="noopener">
+              <a class="btn btn--ghost doi-link" 
+                href="https://doi.org/10.1109/CCWC67433.2026.11393779" 
+                target="_blank" 
+                rel="noopener"
+                data-title="Securing Federated Learning in Health IoT with Edge-Assisted Homomorphic Encryption"
+                data-authors="R. Kavati, H. Khan, S. S. Pulkaram, A. Jalooli"
+                data-venue="IEEE CCWC 2026"
+                data-type="Conference Paper">
                 <i data-lucide="external-link" class="icon-sm"></i> DOI: 10.1109/CCWC67433.2026.11393779
               </a>
             </div>
@@ -252,14 +272,70 @@
               Sensors (MDPI), vol. 25, no. 22, p. 7023, Nov. 2025. PMID: 41305229.
             </p>
             <div class="project__links">
-              <a class="btn btn--ghost" href="https://doi.org/10.3390/s25227023" target="_blank" rel="noopener">
+              <a class="btn btn--ghost doi-link" 
+                href="https://doi.org/10.3390/s25227023" 
+                target="_blank" 
+                rel="noopener"
+                data-title="End-to-End Privacy-Aware Federated Learning for Wearable Health Devices via Encrypted Aggregation"
+                data-authors="H. Khan, R. Kavati, S. S. Pulkaram, A. Jalooli"
+                data-venue="Sensors (MDPI), Vol. 25, No. 22"
+                data-type="Journal Article">
                 <i data-lucide="external-link" class="icon-sm"></i> DOI: 10.3390/s25227023
               </a>
             </div>
           </article>
         </div>
+        
+        <!-- Paper Preview Panel (Desktop only) -->
+        <div class="paper-preview" id="paperPreview">
+          <div class="paper-preview__header">
+            <div class="paper-preview__info">
+              <span class="paper-preview__type"></span>
+              <h4 class="paper-preview__title"></h4>
+            </div>
+            <div class="paper-preview__actions">
+              <a class="btn btn--primary btn--sm paper-preview__open" href="#" target="_blank" rel="noopener">
+                <i data-lucide="external-link" class="icon-sm"></i> Open in New Tab
+              </a>
+              <button class="paper-preview__close" aria-label="Close">
+                <i data-lucide="x" class="icon-sm"></i>
+              </button>
+            </div>
+          </div>
+          <div class="paper-preview__body">
+            <div class="paper-preview__loading">
+              <i data-lucide="loader-2" class="icon spin"></i>
+              <span>Loading paper...</span>
+            </div>
+            <iframe class="paper-preview__iframe" src="" title="Paper Preview"></iframe>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Resume Preview Panel -->
+    <div class="resume-preview" id="resumePreview">
+      <div class="resume-preview__header">
+        <div class="resume-preview__info">
+          <i data-lucide="file-text" class="icon"></i>
+          <h4 class="resume-preview__title">Rahul Kavati - Resume</h4>
+        </div>
+        <div class="resume-preview__actions">
+          <a class="btn btn--primary btn--sm resume-preview__download" href="assets/rahulkavati_resume.pdf" download>
+            <i data-lucide="download" class="icon-sm"></i> Download PDF
+          </a>
+          <a class="btn btn--ghost btn--sm resume-preview__open" href="assets/rahulkavati_resume.pdf" target="_blank" rel="noopener">
+            <i data-lucide="external-link" class="icon-sm"></i> Open in New Tab
+          </a>
+          <button class="resume-preview__close" aria-label="Close">
+            <i data-lucide="x" class="icon-sm"></i>
+          </button>
+        </div>
+      </div>
+      <div class="resume-preview__body">
+        <iframe class="resume-preview__iframe" src="" title="Resume Preview"></iframe>
+      </div>
+    </div>
 
     <section id="skills" class="section section--alt">
       <div class="container">
@@ -272,53 +348,53 @@
           <article class="card skill-card">
             <h3><i data-lucide="server" class="icon"></i> Backend & APIs</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">Spring Boot</span>
-              <span class="skill-tag">Spring MVC</span>
-              <span class="skill-tag">Spring Security</span>
-              <span class="skill-tag">JPA / Hibernate</span>
-              <span class="skill-tag">RESTful APIs</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">Redis</span>
+              <span class="skill-tag"><i class="devicon-java-plain colored"></i> Java</span>
+              <span class="skill-tag"><i class="devicon-spring-original colored"></i> Spring Boot</span>
+              <span class="skill-tag"><i class="devicon-spring-original colored"></i> Spring MVC</span>
+              <span class="skill-tag"><i class="devicon-spring-original colored"></i> Spring Security</span>
+              <span class="skill-tag"><i class="devicon-hibernate-plain colored"></i> JPA / Hibernate</span>
+              <span class="skill-tag"><i data-lucide="plug" class="icon-xs"></i> RESTful APIs</span>
+              <span class="skill-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+              <span class="skill-tag"><i class="devicon-mysql-original colored"></i> MySQL</span>
+              <span class="skill-tag"><i class="devicon-redis-plain colored"></i> Redis</span>
             </div>
           </article>
           <article class="card skill-card">
             <h3><i data-lucide="smartphone" class="icon"></i> Frontend & Mobile</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Flutter</span>
-              <span class="skill-tag">Dart</span>
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">JavaScript (ES6+)</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">HTML5 / CSS3</span>
-              <span class="skill-tag">Provider / Bloc / Redux</span>
+              <span class="skill-tag"><i class="devicon-flutter-plain colored"></i> Flutter</span>
+              <span class="skill-tag"><i class="devicon-dart-plain colored"></i> Dart</span>
+              <span class="skill-tag"><i class="devicon-react-original colored"></i> React.js</span>
+              <span class="skill-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+              <span class="skill-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+              <span class="skill-tag"><i class="devicon-python-plain colored"></i> Python</span>
+              <span class="skill-tag"><i class="devicon-html5-plain colored"></i> HTML5</span>
+              <span class="skill-tag"><i class="devicon-css3-plain colored"></i> CSS3</span>
+              <span class="skill-tag"><i class="devicon-redux-original colored"></i> Redux / Bloc</span>
             </div>
           </article>
           <article class="card skill-card">
             <h3><i data-lucide="cloud" class="icon"></i> Cloud & DevOps</h3>
             <div class="skill-tags">
-              <span class="skill-tag">CI/CD Pipelines</span>
-              <span class="skill-tag">Jenkins</span>
-              <span class="skill-tag">GitHub Actions</span>
-              <span class="skill-tag">GCP</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">Kubernetes</span>
-              <span class="skill-tag">Firebase</span>
-              <span class="skill-tag">Cloud Functions</span>
-              <span class="skill-tag">Git</span>
+              <span class="skill-tag"><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span class="skill-tag"><i class="devicon-githubactions-plain colored"></i> GitHub Actions</span>
+              <span class="skill-tag"><i class="devicon-googlecloud-plain colored"></i> GCP</span>
+              <span class="skill-tag"><i class="devicon-docker-plain colored"></i> Docker</span>
+              <span class="skill-tag"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+              <span class="skill-tag"><i class="devicon-firebase-plain colored"></i> Firebase</span>
+              <span class="skill-tag"><i class="devicon-git-plain colored"></i> Git</span>
+              <span class="skill-tag"><i class="devicon-bash-plain"></i> CI/CD</span>
             </div>
           </article>
           <article class="card skill-card">
             <h3><i data-lucide="brain" class="icon"></i> Research & ML</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Federated Learning</span>
-              <span class="skill-tag">Privacy-Preserving ML</span>
-              <span class="skill-tag">Homomorphic Encryption (CKKS)</span>
-              <span class="skill-tag">ML Model Deployment</span>
-              <span class="skill-tag">Database Design</span>
-              <span class="skill-tag">Query Optimization</span>
+              <span class="skill-tag"><i class="devicon-tensorflow-original colored"></i> Federated Learning</span>
+              <span class="skill-tag"><i data-lucide="shield" class="icon-xs"></i> Privacy-Preserving ML</span>
+              <span class="skill-tag"><i data-lucide="lock" class="icon-xs"></i> CKKS Encryption</span>
+              <span class="skill-tag"><i class="devicon-pytorch-original colored"></i> ML Deployment</span>
+              <span class="skill-tag"><i data-lucide="database" class="icon-xs"></i> Database Design</span>
+              <span class="skill-tag"><i data-lucide="zap" class="icon-xs"></i> Query Optimization</span>
             </div>
           </article>
         </div>
@@ -358,8 +434,8 @@
             <h3><i data-lucide="send" class="icon"></i> Reach me</h3>
             <div class="stack">
               <a class="link" href="mailto:rahulkavati.us@gmail.com"><i data-lucide="mail" class="icon-sm"></i> rahulkavati.us@gmail.com</a>
-              <a class="link" href="https://linkedin.com/in/rahulkavati" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i> linkedin.com/in/rahulkavati</a>
-              <a class="link" href="https://github.com/rahulkavati" target="_blank" rel="noopener"><i data-lucide="github" class="icon-sm"></i> github.com/rahulkavati</a>
+              <a class="link" href="https://linkedin.com/in/rahulkavati" target="_blank" rel="noopener"><i class="devicon-linkedin-plain icon-sm"></i> linkedin.com/in/rahulkavati</a>
+              <a class="link" href="https://github.com/rahulkavati" target="_blank" rel="noopener"><i class="devicon-github-original icon-sm"></i> github.com/rahulkavati</a>
             </div>
           </div>
 
